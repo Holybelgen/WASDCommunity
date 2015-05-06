@@ -26,5 +26,12 @@ namespace Wasd.Controllers
 
             return View();
         }
+        
+        public ActionResult Groups()
+        {
+            ViewBag.Message = "Your groups page";
+
+            return View();
+        }
     }
 }
