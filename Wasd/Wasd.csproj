@@ -222,9 +222,17 @@
     <Content Include="Views\Friends\Friends.cshtml" />
     <Content Include="Views\Groups\Groups.cshtml" />
     <Content Include="Views\Streams\Streams.cshtml" />
+    <Content Include="Views\Groups\Tournaments.cshtml" />
+    <Content Include="Views\Groups\ScheduledMatches.cshtml" />
+    <Content Include="Views\Groups\LookingToPlay.cshtml" />
+    <Content Include="Views\Groups\Members.cshtml" />
+    <Content Include="Views\Groups\Guides.cshtml" />
+    <Content Include="Views\Groups\MyGroups.cshtml" />
+    <Content Include="Views\Shared\_GroupLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Guides\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
