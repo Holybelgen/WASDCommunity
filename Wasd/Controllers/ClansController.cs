@@ -6,11 +6,11 @@ using System.Web.Mvc;
 
 namespace Wasd.Controllers
 {
-    public class GroupsController : Controller
+    public class ClansController : Controller
     {
         //
-        // GET: /Groups/
-        public ActionResult Groups()
+        // GET: /Clans/
+        public ActionResult Clans()
         {
             return View();
         }
