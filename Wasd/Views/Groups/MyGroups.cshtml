@@ -1,15 +1,5 @@
 ﻿
 @{
     ViewBag.Title = "MyGroups";
+    Layout = "~/Views/Shared/_GroupLayout.cshtml";
 }
-
-<h2>MyGroups</h2>
-
-<ul class="nav navbar-nav">
-    <li>@Html.ActionLink("MyGroup", "MyGroups", "Groups")</li>
-    <li>@Html.ActionLink("Tournaments", "Tournaments", "Groups")</li>
-    <li>@Html.ActionLink("Scheduled Matches", "ScheduledMatches", "Groups")</li>
-    <li>@Html.ActionLink("Looking to play", "LookingToPlay", "Groups")</li>
-    <li>@Html.ActionLink("Members", "Members", "Groups")</li>
-    <li>@Html.ActionLink("Guides", "Guides", "Groups")</li>
-</ul>
