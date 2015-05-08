@@ -1,4 +1,6 @@
 ﻿using System.Web.Mvc;
+using Wasd.Models;
+using System.Linq;
 
 namespace Wasd.Controllers
 {
@@ -14,7 +16,9 @@ namespace Wasd.Controllers
         // GET: /MyGroups/
         public ActionResult MyGroups()
         {
-            return View();
+            var db = new ApplicationDbContext();
+            var AllGroups = db.Groups.ToList();
+            return View(AllGroups);
         }
         //
         // GET: /Tournaments/

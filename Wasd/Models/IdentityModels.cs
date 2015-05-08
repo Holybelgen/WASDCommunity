@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace Wasd.Models
 {
@@ -9,6 +10,8 @@ namespace Wasd.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Group> Groups { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection")
         {
