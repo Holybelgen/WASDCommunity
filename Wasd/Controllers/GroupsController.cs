@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace Wasd.Controllers
 {
+    [Authorize]
     public class GroupsController : Controller
     {
         //
