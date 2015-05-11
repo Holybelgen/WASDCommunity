@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using Wasd.Models;
 using System.Linq;
+using Wasd.Services;
 
 namespace Wasd.Controllers
 {
@@ -58,5 +59,21 @@ namespace Wasd.Controllers
         {
             return View();
         }
-	}
+
+        public ActionResult CreateGroup()
+        {
+            Group newGroup = new Group();
+            return View(newGroup);
+        }
+
+        [HttpPost]
+        public ActionResult CreateGroup(Group newGroup)
+        {
+            var ser = new GroupService();
+
+            ser.addGroup(newGroup);
+
+            return RedirectToAction("Index", "Home");
+        }
+    }
 }

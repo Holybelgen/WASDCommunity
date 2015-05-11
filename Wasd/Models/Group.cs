@@ -8,9 +8,8 @@ namespace Wasd.Models
     public class Group
     {
         public int Id { get; set; }
-        public string GroupName { get; set; }
-        public string GameName { get; set; }
-        public string AboutGroup {get; set; }
-        public ICollection<Group> Groups { get; set; }
+        public string groupName { get; set; }
+        public string gameName { get; set; }
+        public string aboutGroup {get; set; }
     }
 }

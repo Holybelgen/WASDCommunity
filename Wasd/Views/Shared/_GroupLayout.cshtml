@@ -30,6 +30,24 @@
             @Html.Partial("_LoginPartial")
         </div>
     </div>
+<<<<<<< HEAD
+=======
+<div class="container body-content">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("MyGroups", "MyGroups", "Groups")</li>
+        <li>@Html.ActionLink("Tournaments", "Tournaments", "Groups")</li>
+        <li>@Html.ActionLink("Scheduled Matches", "ScheduledMatches", "Groups")</li>
+        <li>@Html.ActionLink("Looking to play", "LookingToPlay", "Groups")</li>
+        <li>@Html.ActionLink("Members", "Members", "Groups")</li>
+        <li>@Html.ActionLink("Guides", "Guides", "Groups")</li>
+        <li>@Html.ActionLink("Create Group", "CreateGroup", "Groups")</li>
+    </ul>
+    @RenderBody()
+    <hr/>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - WASD Gaming Community</p>
+    </footer>
+>>>>>>> 8653ad12e790bf55c2b858a2b0a0a59a2d51a788
 </div>
     <div class="wrapper">
         <div class="container body-content">
