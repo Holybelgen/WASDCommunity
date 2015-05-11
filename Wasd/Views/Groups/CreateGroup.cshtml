@@ -4,14 +4,13 @@
     ViewBag.Title = "CreateGroup";
 }
 
-<h2>CreateGroup</h2>
+<h2>Create a new group</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Group</h4>
         <hr />
         @Html.ValidationSummary(true)
 
@@ -48,5 +47,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to group list", "Groups")
 </div>
