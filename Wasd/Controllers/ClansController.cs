@@ -2,6 +2,7 @@
 
 namespace Wasd.Controllers
 {
+    [Authorize]
     public class ClansController : Controller
     {
         //

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Wasd.Models.Group>
+
+@{
+    ViewBag.Title = "MyGroups";
+    Layout = "~/Views/Shared/_GroupLayout.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div>
+        <h4>@item.GroupName</h4>
+        <div>@item.GameName</div>
+        <div>@item.AboutGroup</div>
+        <hr />
+    </div>
+}
