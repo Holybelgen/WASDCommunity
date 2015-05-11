@@ -41,6 +41,22 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
-.nazbar {
-    background-color: #800000
+/*Sticky footer CSS*/
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+}
+
+.footer, .push {
+    height: 4em;
 }
