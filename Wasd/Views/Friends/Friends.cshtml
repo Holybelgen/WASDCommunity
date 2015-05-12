@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model Wasd.Models.SearchViewModel
 
 @{
     ViewBag.Title = "Friends";
@@ -6,3 +6,11 @@
 }
 
 <h2>My Friends</h2>
+
+@using (Html.BeginForm("Friends", "Friends"))
+{
+    @Html.LabelFor(x => x.Query)
+    @Html.EditorFor(x => x.Query)
+    @Html.ValidationMessageFor(x => x.Query)
+    <input type="submit" value="search" />
+}

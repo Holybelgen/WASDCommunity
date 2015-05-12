@@ -161,18 +161,25 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClansController.cs" />
     <Compile Include="Controllers\FriendsController.cs" />
+    <Compile Include="Controllers\FriendSearchResultsController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StreamsController.cs" />
+    <Compile Include="Controllers\UserPostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\SearchViewModel.cs" />
+    <Compile Include="Models\UserPost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GroupService.cs" />
+    <Compile Include="Services\SearchService.cs" />
+    <Compile Include="Services\UserPostService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -233,10 +240,17 @@
     <Content Include="Views\Groups\MyGroups.cshtml" />
     <Content Include="Views\Shared\_GroupLayout.cshtml" />
     <Content Include="Views\Groups\CreateGroup.cshtml" />
+    <Content Include="Views\Friends\FriendsSearchResults.cshtml" />
+    <Content Include="Views\UserPost\Create.cshtml" />
+    <Content Include="Views\UserPost\Delete.cshtml" />
+    <Content Include="Views\UserPost\Details.cshtml" />
+    <Content Include="Views\UserPost\Edit.cshtml" />
+    <Content Include="Views\UserPost\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Guides\" />
+    <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

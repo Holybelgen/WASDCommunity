@@ -11,6 +11,8 @@ namespace Wasd.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Group> Groups { get; set; }
+        public DbSet<Game> Games { get; set; }
+        public DbSet<UserPost> UserPosts { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection")
