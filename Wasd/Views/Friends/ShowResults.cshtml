@@ -8,6 +8,6 @@
 <ul>
     @foreach (var user in Model)
     {
-        <li>@user.UserName</li>
+        <li>@user.UserName @Html.ActionLink("Add", "AddFriend", new { id = user.Id })</li>
     }
 </ul>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Wasd.Models;
 using Wasd.Services;
+using Microsoft.AspNet.Identity;
 
 
 namespace Wasd.Controllers
@@ -18,6 +19,7 @@ namespace Wasd.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Friends(SearchViewModel model)
         {
@@ -27,6 +29,19 @@ namespace Wasd.Controllers
 
             return View("ShowResults", users);
         }
+
+        public ActionResult AddFriend(string id)
+        {
+            var currUserId = User.Identity.GetUserId();
+            var friendUserId = id;
+
+            var ser = new FriendService();
+
+            ser.addFriend(currUserId, friendUserId);
+
+            return View("Friends");
+        }
+
 
 	}
 }

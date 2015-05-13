@@ -14,7 +14,7 @@ namespace Wasd.Services
         {
             var posts = db.UserPosts.ToList();
 
-            posts.OrderByDescending(x => x.Date);
+            //posts.OrderByDescending(x => x.Date);
 
             return posts;
         }

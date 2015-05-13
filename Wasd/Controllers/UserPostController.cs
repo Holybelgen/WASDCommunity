@@ -21,9 +21,6 @@ namespace Wasd.Controllers
             var ser = new UserPostService();
             var posts = ser.GetNewPosts();
 
-            //return View(posts);
-            //return View(db.UserPosts.ToList());
-
             return View(posts.OrderByDescending(p => p.Date).Take(10).ToList());
         }
 
