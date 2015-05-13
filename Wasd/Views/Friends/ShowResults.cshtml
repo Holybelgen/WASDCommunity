@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Wasd.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "ShowResults";
+}
+
+<h2>ShowResults</h2>
+<ul>
+    @foreach (var user in Model)
+    {
+        <li>@user.UserName</li>
+    }
+</ul>

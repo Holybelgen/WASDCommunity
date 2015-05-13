@@ -247,6 +247,7 @@
     <Content Include="Views\UserPost\Details.cshtml" />
     <Content Include="Views\UserPost\Edit.cshtml" />
     <Content Include="Views\UserPost\Index.cshtml" />
+    <Content Include="Views\Friends\ShowResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

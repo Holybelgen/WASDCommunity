@@ -18,7 +18,15 @@ namespace Wasd.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Friends(SearchViewModel model)
+        {
 
+            var ser = new SearchService();
+            List<ApplicationUser> users = ser.searchUsers(model);
+
+            return View("ShowResults", users);
+        }
 
 	}
 }
