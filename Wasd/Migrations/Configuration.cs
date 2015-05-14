@@ -1,9 +1,10 @@
+using Microsoft.AspNet.Identity;
+using Wasd.Models;
+
 namespace Wasd.Migrations
 {
-    using System;
-    using System.Data.Entity;
+
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Wasd.Models.ApplicationDbContext>
     {
@@ -14,18 +15,33 @@ namespace Wasd.Migrations
 
         protected override void Seed(Wasd.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            var passwordHash = new PasswordHasher();
+            string password = passwordHash.HashPassword("123456");
+            context.Users.AddOrUpdate(u => u.UserName,
+                new ApplicationUser
+                {
+                    UserName = "Steve",
+                    PasswordHash = password,
+                });
+            context.Users.AddOrUpdate(u => u.UserName,
+                new ApplicationUser
+                {
+                    UserName = "Gorgon",
+                    PasswordHash = password,
+                });
+            context.Users.AddOrUpdate(u => u.UserName,
+            new ApplicationUser
+                {
+                UserName = "Sjomli",
+                PasswordHash = password,
+                 });
+            context.Users.AddOrUpdate(u => u.UserName,
+            new ApplicationUser
+            {
+                UserName = "Goggi",
+                PasswordHash = password,
+            });
         }
+
     }
 }

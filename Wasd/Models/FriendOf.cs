@@ -21,7 +21,6 @@ namespace Wasd.Models
 
         public FriendOf()
         {
-
         }
 
         public FriendOf(String userId, String friendId)

@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Wasd.Models;
 using Wasd.Services;
+using Microsoft.AspNet.Identity;
+
 
 namespace Wasd.Controllers
 {
@@ -19,10 +21,10 @@ namespace Wasd.Controllers
         // GET: /UserPost/
         public ActionResult Index()
         {
-            var ser = new UserPostService();
+            var ser = new userPostService();
             var posts = ser.GetNewPosts();
 
-            return View(posts.OrderByDescending(p => p.Date).Take(10).ToList());
+            return View(posts.OrderByDescending(p => p.date).Take(10).ToList());
         }
 
         // GET: /UserPost/Details/5
@@ -51,15 +53,23 @@ namespace Wasd.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UserID,Content,Date")] UserPost userpost)
+        public ActionResult Create([Bind(Include = "Id,userName,userID,content,date")] UserPost userpost)
         {
+            var currUserId = User.Identity.GetUserId();
+            var currUserName = User.Identity.GetUserName();
+
+            userpost.userName = currUserName;
+            userpost.userID = currUserId;
+
+            userpost.content = DateTime.Now.ToString();
+
+            var userPostSer = new userPostService();
             if (ModelState.IsValid)
             {
-                db.UserPosts.Add(userpost);
-                db.SaveChanges();
+                userPostSer.addUserPost(userpost);
                 return RedirectToAction("Index");
             }
-
+            
             return View(userpost);
         }
 
