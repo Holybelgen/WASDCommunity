@@ -23,11 +23,11 @@ namespace Wasd.Models
         {
         }
 
-        //public MemberOf(String userId, String groupId)
-        //{
-        //    // TODO: Complete member initialization
-        //    this.userId = userId;
-        //    this.groupId = groupId;
-        //}
+        public MemberOf(String userId, String groupId)
+        {
+            // TODO: Complete member initialization
+            this.userId = userId;
+            this.groupId = groupId;
+        }
     }
 }

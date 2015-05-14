@@ -2,6 +2,7 @@
 using Wasd.Models;
 using System.Linq;
 using Wasd.Services;
+using Microsoft.AspNet.Identity;
 
 namespace Wasd.Controllers
 {
@@ -79,7 +80,9 @@ namespace Wasd.Controllers
         {
             var ser = new GroupService();
 
-            ser.addGroup(newGroup);
+            string userId = User.Identity.GetUserId();
+
+            ser.createGroup(newGroup, userId);
 
             return RedirectToAction("Index", "Home");
         }
