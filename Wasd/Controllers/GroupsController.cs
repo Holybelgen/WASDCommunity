@@ -2,6 +2,7 @@
 using Wasd.Models;
 using System.Linq;
 using Wasd.Services;
+using Microsoft.AspNet.Identity;
 
 namespace Wasd.Controllers
 {
@@ -60,6 +61,14 @@ namespace Wasd.Controllers
             return View();
         }
 
+        [Authorize]
+        public ActionResult ListGroups()
+        {
+            var db = new ApplicationDbContext();
+            var AllGroups = db.Groups.ToList();
+            return View("ListGroups", AllGroups);
+        }
+
         public ActionResult CreateGroup()
         {
             Group newGroup = new Group();
@@ -71,7 +80,9 @@ namespace Wasd.Controllers
         {
             var ser = new GroupService();
 
-            ser.addGroup(newGroup);
+            string userId = User.Identity.GetUserId();
+
+            ser.createGroup(newGroup, userId);
 
             return RedirectToAction("Index", "Home");
         }

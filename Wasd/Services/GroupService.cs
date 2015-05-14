@@ -10,12 +10,23 @@ namespace Wasd.Services
     {
         ApplicationDbContext db = new ApplicationDbContext();
 
-        public void addGroup(Group newGroup)
+        public void createGroup(Group newGroup, string userId)
         {
             var dbGroup = db.Groups;
+            var dbMember = db.MemberOf;
+
+            MemberOf membership = new MemberOf(userId, newGroup.Id);
+
+            dbMember.Add(membership);
 
             dbGroup.Add(newGroup);
             db.SaveChanges();
         }
+
+        //public List<Group> listMyGroups(string userId)
+        //{
+        //    var dbGroup = db.Groups;
+        //    return;
+        //}
     }
 }
