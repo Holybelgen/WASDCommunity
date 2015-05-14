@@ -13,6 +13,6 @@ namespace Wasd.Models
         public string userName { get; set; }
         public string userID { get; set; }
         public string content { get; set; }
-        public DateTime date { get; set; }
+        public string date { get; set; }
     }
 }
