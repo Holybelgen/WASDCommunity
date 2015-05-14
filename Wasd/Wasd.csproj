@@ -159,11 +159,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ClansController.cs" />
     <Compile Include="Controllers\FriendsController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\StreamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,7 +169,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FriendOf.cs" />
     <Compile Include="Models\FriendViewModel.cs" />
-    <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\SearchViewModel.cs" />
@@ -229,10 +226,8 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Clans\Clans.cshtml" />
     <Content Include="Views\Friends\Friends.cshtml" />
     <Content Include="Views\Groups\Groups.cshtml" />
-    <Content Include="Views\Streams\Streams.cshtml" />
     <Content Include="Views\Groups\Tournaments.cshtml" />
     <Content Include="Views\Groups\ScheduledMatches.cshtml" />
     <Content Include="Views\Groups\LookingToPlay.cshtml" />
