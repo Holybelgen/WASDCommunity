@@ -11,6 +11,5 @@ namespace Wasd.Models
         public int UserID { get; set; }
         public string Content { get; set; }
         public DateTime Date { get; set; }
-
     }
 }

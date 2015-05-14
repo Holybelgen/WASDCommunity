@@ -30,10 +30,10 @@ namespace Wasd.Controllers
             return View("ShowResults", users);
         }
 
-        public ActionResult AddFriend(string id)
+        public ActionResult AddFriend(string Id)
         {
             var currUserId = User.Identity.GetUserId();
-            var friendUserId = id;
+            var friendUserId = Id;
 
             var ser = new FriendService();
 
@@ -42,6 +42,17 @@ namespace Wasd.Controllers
             return View("Friends");
         }
 
+        public ActionResult ListMyFriends()
+        {
+            var currUserId = User.Identity.GetUserId();
 
+            var ser = new FriendService();
+
+            List<ApplicationUser> myFriends = new List<ApplicationUser>();
+
+            myFriends.AddRange(ser.GetFriends(currUserId));
+
+            return View(myFriends);
+        }
 	}
 }

@@ -19,6 +19,11 @@ namespace Wasd.Models
         //[ForeignKey("ApplicationUser")]
         public String friendId { get; set; }
 
+        public FriendOf()
+        {
+
+        }
+
         public FriendOf(String userId, String friendId)
         {
             // TODO: Complete member initialization

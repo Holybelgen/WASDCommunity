@@ -15,17 +15,20 @@ namespace Wasd.Services
         {
             var friendOf = db.FriendOf;
 
-            //var user = getUserById(currUserId);
-            //var friend = getUserById(friendUserId);
             FriendOf friendship = new FriendOf(currUserId, friendUserId);
             FriendOf friendshipReturned = new FriendOf(friendUserId, currUserId);
-            //user.Friends.Add(friend);
-            //friend.Friends.Add(user);
+
+            if (!isFriendOf(currUserId, friendUserId))
+            {
+                db.FriendOf.Add(friendship);
+                db.FriendOf.Add(friendshipReturned);
+                db.SaveChanges();
+            }
+
 
             //try
             //{
-                db.FriendOf.Add(friendship);
-                db.FriendOf.Add(friendshipReturned);
+            
             //}
             //catch
             //{
@@ -36,7 +39,6 @@ namespace Wasd.Services
             //}
             //FriendOf fO = new FriendOf() { getUserById(friendUserId), getUserByName(currUserId) };
             //friendOf.Add(new FriendOf () { currUserId, friendUserId });
-            db.SaveChanges();
         }
 
         public ApplicationUser getUserByName(string name)
@@ -55,6 +57,41 @@ namespace Wasd.Services
                         select u).SingleOrDefault();
 
             return user;
+        }
+
+        public bool isFriendOf(string user1Id, string user2Id)
+        {
+            var friendships = db.FriendOf;
+            var isFriend = (from f in friendships
+                           where f.userId.Equals(user1Id)
+                           select f.friendId).ToList();
+            if(isFriend.Contains(user2Id) || user1Id == user2Id)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public List<ApplicationUser> GetFriends(string id)
+        {
+            try
+            {
+                var friendships = (from f in db.FriendOf
+                                   where f.userId == id
+                                   select f).ToList();
+                List<ApplicationUser> friends = new List<ApplicationUser>();
+
+                foreach (var fr in friendships)
+                {
+                    friends.Add(getUserById(fr.friendId));
+                }
+
+                return friends;
+            }
+            catch(Exception ex)
+            {   
+            }
+            return null;
         }
     }
 }
