@@ -1,24 +1,33 @@
-﻿@using Wasd.Models;
-@model IEnumerable<Wasd.Models.ApplicationUser>
+﻿@model IEnumerable<Wasd.Models.ApplicationUser>
 @{
     Layout = "";
 }
+@Styles.Render("~/Content/customcss.css")
 
-@*@if (Model != null)
-{*@
-    <div class="grid">
-        <table cellspacing="0" width="80">
-            <tr>
-                <th>My Friends</th>
-            </tr>
+
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<div class="pos_fixed">
+    <div class="jumbotron list-content">
+        <ul class="list-group">
+            <li href="#" class="list-group-item title">
+                My friends
+            </li>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td align="left">
+                <li href="#" class="list-group-item text-left">
+                    <label class="name">
                         @item.UserName
-                    </td>
-                </tr>
+                    </label>
+                    <label class="pull-right">
+                        <a class="btn btn-success btn-xs glyphicon glyphicon-ok" href="#" title="View"></a>
+                        <a class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="#" title="Delete"></a>
+                        <a class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#" title="Send message"></a>
+                    </label>
+                    <div class="break"></div>
+                </li>
             }
-        </table>
+        </ul>
     </div>
-@*}*@
+</div>
+
+
