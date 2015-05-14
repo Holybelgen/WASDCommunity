@@ -42,6 +42,7 @@
                 <li>@Html.ActionLink("Guides", "Guides", "Groups")</li>
                 <li>@Html.ActionLink("Create Group", "CreateGroup", "Groups")</li>
             </ul>
+            @Html.Action("ListMyFriends", "Friends")
             @RenderBody()
             <div class="push"></div>
         </div>

@@ -61,7 +61,9 @@ namespace Wasd.Controllers
             userpost.userName = currUserName;
             userpost.userID = currUserId;
 
-            userpost.date = DateTime.Now.ToString();
+            string format = "ddd MMM d HH:mm yyyy";
+
+            userpost.date = DateTime.Now.ToString(format);
 
             var userPostSer = new userPostService();
             if (ModelState.IsValid)

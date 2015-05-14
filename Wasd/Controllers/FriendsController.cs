@@ -42,6 +42,7 @@ namespace Wasd.Controllers
             return View("Friends");
         }
 
+        [ChildActionOnly]
         public ActionResult ListMyFriends()
         {
             var currUserId = User.Identity.GetUserId();

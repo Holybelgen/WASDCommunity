@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Wasd.Models;
+using Wasd.Services;
 
 
 namespace Wasd.Services
@@ -24,6 +25,20 @@ namespace Wasd.Services
 
             return posts;
         }
+
+
+        //public List<UserPost> getPostsFromFriends(string userId)
+        //{
+        //    var friendService = new FriendService();
+
+        //    var posts = (from p in db.UserPosts
+        //                select p).ToList();
+
+        //    List<UserPost> friendPosts = new List<UserPost>();
+
+        //    return ;
+        //}
+
 
         public void addUserPost(UserPost userPost)
         {
