@@ -16,11 +16,26 @@ namespace Wasd.Services
             var dbGroup = db.Groups;
             var dbMember = db.MemberOf;
 
-            MemberOf membership = new MemberOf(userId, newGroup.Id);
-
-            dbMember.Add(membership);
             dbGroup.Add(newGroup);
             db.SaveChanges();
+
+            var theGroup = getGroupByName(newGroup.groupName);
+
+            string groupId = theGroup.Id.ToString();
+
+            MemberOf membership = new MemberOf(userId, groupId);
+            dbMember.Add(membership);
+            db.SaveChanges();
+        }
+
+        public Group getGroupByName(string groupName)
+        {
+            var dbGroup = db.Groups;
+
+            var theGroup = (from g in dbGroup
+                            where g.groupName.Equals(groupName)
+                            select g).SingleOrDefault();
+            return theGroup;
         }
 
         public bool isMemberOf(string userId, string groupId)
@@ -54,7 +69,7 @@ namespace Wasd.Services
 
             foreach (Group g in allGroups)
             {
-                if (isMemberOf(userId, g.Id))
+                if (isMemberOf(userId, g.Id.ToString()))
                 {
                     myGroups.Add(g);
                 }
@@ -63,7 +78,7 @@ namespace Wasd.Services
             return myGroups;
         }
 
-        public List<ApplicationUser> getMembersOfGroup(string groupId)
+        public List<ApplicationUser> getMembersOfGroup(int groupId)
         {
             var members = (from g in db.MemberOf
                            where g.groupId.Equals(groupId)
