@@ -32,7 +32,10 @@
         </div>
     </div>
     <div class="container body-content">
-        @Html.Action("ListMyFriends", "Friends")
+        @if(User.Identity.IsAuthenticated)
+        {
+            @Html.Action("ListMyFriends", "Friends")
+        }
         @RenderBody()
         <hr />
         <footer>

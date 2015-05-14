@@ -27,17 +27,24 @@ namespace Wasd.Services
         }
 
 
-        //public List<UserPost> getPostsFromFriends(string userId)
-        //{
-        //    var friendService = new FriendService();
+        public List<UserPost> getPostsFromFriends(string userId)
+        {
+            var friendService = new FriendService();
 
-        //    var posts = (from p in db.UserPosts
-        //                select p).ToList();
+            var posts = db.UserPosts.ToList();
 
-        //    List<UserPost> friendPosts = new List<UserPost>();
+            List<UserPost> friendPosts = new List<UserPost>();
 
-        //    return ;
-        //}
+            foreach(UserPost up in posts)
+            {
+                if(friendService.isFriendOf(userId, up.userID))
+                {
+                    friendPosts.Add(up);
+                }
+            }
+
+            return friendPosts;
+        }
 
 
         public void addUserPost(UserPost userPost)
