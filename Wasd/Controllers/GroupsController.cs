@@ -3,6 +3,8 @@ using Wasd.Models;
 using System.Linq;
 using Wasd.Services;
 using Microsoft.AspNet.Identity;
+using Wasd.Models;
+using System.Collections.Generic;
 
 namespace Wasd.Controllers
 {
@@ -64,9 +66,13 @@ namespace Wasd.Controllers
         [Authorize]
         public ActionResult ListGroups()
         {
-            var db = new ApplicationDbContext();
-            var AllGroups = db.Groups.ToList();
-            return View("ListGroups", AllGroups);
+            var allGroupsSer = new GroupService();
+
+            List<Group> allGroups = new List<Group>();
+
+            allGroups = allGroupsSer.listAllGroups();
+
+            return View("ListGroups", allGroups);
         }
 
         public ActionResult CreateGroup()

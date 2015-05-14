@@ -28,14 +28,21 @@ namespace Wasd.Services
             var memberDb = db.MemberOf;
 
             var memberList = (from g in memberDb
-                             where g.groupId.Equals(groupId)
-                             select g.userId).ToList();
+                              where g.groupId.Equals(groupId)
+                              select g.userId).ToList();
 
-            if(memberList.Contains(userId))
+            if (memberList.Contains(userId))
             {
                 return true;
             }
             return false;
+        }
+
+        public List<Group> listAllGroups()
+        {
+            var allGroups = db.Groups.ToList();
+
+            return allGroups;
         }
 
         public List<Group> listMyGroups(string userId)
@@ -45,9 +52,9 @@ namespace Wasd.Services
 
             List<Group> myGroups = new List<Group>();
 
-            foreach(Group g in allGroups)
+            foreach (Group g in allGroups)
             {
-                if(isMemberOf(userId, g.Id))
+                if (isMemberOf(userId, g.Id))
                 {
                     myGroups.Add(g);
                 }
@@ -61,12 +68,12 @@ namespace Wasd.Services
             var members = (from g in db.MemberOf
                            where g.groupId.Equals(groupId)
                            select g.userId).ToList();
-            
+
             List<ApplicationUser> theMembers = new List<ApplicationUser>();
 
             var ser = new FriendService();
 
-            foreach(string u in members)
+            foreach (string u in members)
             {
                 theMembers.Add(ser.getUserById(u));
             }
