@@ -38,7 +38,7 @@ namespace Wasd.Services
             return theGroup;
         }
 
-        public bool isMemberOf(string userId, int groupId)
+        public bool isMemberOf(string userId, string groupId)
         {
             var memberDb = db.MemberOf;
 
@@ -69,7 +69,7 @@ namespace Wasd.Services
 
             foreach (Group g in allGroups)
             {
-                if (isMemberOf(userId, g.Id))
+                if (isMemberOf(userId, g.Id.ToString()))
                 {
                     myGroups.Add(g);
                 }
