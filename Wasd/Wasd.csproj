@@ -171,6 +171,7 @@
     <Compile Include="Models\FriendViewModel.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\MemberOf.cs" />
     <Compile Include="Models\SearchViewModel.cs" />
     <Compile Include="Models\UserPost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -242,6 +243,7 @@
     <Content Include="Views\Home\Edit.cshtml" />
     <Content Include="Views\Friends\ShowResults.cshtml" />
     <Content Include="Views\Friends\ListMyFriends.cshtml" />
+    <Content Include="Views\Groups\ListGroups.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

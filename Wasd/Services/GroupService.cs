@@ -17,5 +17,11 @@ namespace Wasd.Services
             dbGroup.Add(newGroup);
             db.SaveChanges();
         }
+
+        //public List<Group> listMyGroups(string userId)
+        //{
+        //    var dbGroup = db.Groups;
+        //    return;
+        //}
     }
 }

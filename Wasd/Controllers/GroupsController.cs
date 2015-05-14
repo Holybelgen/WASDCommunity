@@ -60,6 +60,14 @@ namespace Wasd.Controllers
             return View();
         }
 
+        [Authorize]
+        public ActionResult ListGroups()
+        {
+            var db = new ApplicationDbContext();
+            var AllGroups = db.Groups.ToList();
+            return View("ListGroups", AllGroups);
+        }
+
         public ActionResult CreateGroup()
         {
             Group newGroup = new Group();
