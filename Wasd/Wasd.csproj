@@ -216,7 +216,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\TempIndex.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -238,13 +238,14 @@
     <Content Include="Views\Groups\MyGroups.cshtml" />
     <Content Include="Views\Shared\_GroupLayout.cshtml" />
     <Content Include="Views\Groups\CreateGroup.cshtml" />
-    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Delete.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
     <Content Include="Views\Friends\ShowResults.cshtml" />
     <Content Include="Views\Friends\ListMyFriends.cshtml" />
     <Content Include="Views\Groups\ListGroups.cshtml" />
+    <Content Include="Views\Home\PostList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

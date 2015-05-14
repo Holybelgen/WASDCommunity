@@ -16,7 +16,7 @@ namespace Wasd.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: /UserPost/
-        public ActionResult Index()
+        public ActionResult PostList()
         {
             var ser = new userPostService();
             var posts = ser.getPostsFromFriends(User.Identity.GetUserId());
@@ -40,7 +40,7 @@ namespace Wasd.Controllers
         }
 
         // GET: /UserPost/Create
-        public ActionResult Create()
+        public ActionResult Index()
         {
             return View();
         }
@@ -50,7 +50,7 @@ namespace Wasd.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,userName,userID,content,date")] UserPost userpost)
+        public ActionResult Index([Bind(Include = "Id,userName,userID,content,date")] UserPost userpost)
         {
             var currUserId = User.Identity.GetUserId();
             var currUserName = User.Identity.GetUserName();
