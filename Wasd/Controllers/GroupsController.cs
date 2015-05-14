@@ -23,9 +23,15 @@ namespace Wasd.Controllers
         [Authorize]
         public ActionResult MyGroups()
         {
-            var db = new ApplicationDbContext();
-            var AllGroups = db.Groups.ToList();
-            return View(AllGroups);
+            var groupSer = new GroupService();
+
+            List<Group> myGroups = new List<Group>();
+
+            var userId = User.Identity.GetUserId();
+
+            myGroups = groupSer.listMyGroups(userId);
+
+            return View(myGroups);
         }
         //
         // GET: /Tournaments/
