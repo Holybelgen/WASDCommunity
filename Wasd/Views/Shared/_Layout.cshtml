@@ -30,14 +30,9 @@
         </div>
     </div>
     <div class="container body-content">
-<<<<<<< HEAD
-        @if (User.Identity.IsAuthenticated) { 
-        @Html.Action("ListMyFriends", "Friends")
-=======
         @if(User.Identity.IsAuthenticated)
         {
             @Html.Action("ListMyFriends", "Friends")
->>>>>>> b9fa71680333ef72fccb08c31d6cf3db232ce276
         }
         @RenderBody()
         <hr />

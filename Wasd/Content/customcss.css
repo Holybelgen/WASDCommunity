@@ -1,6 +1,6 @@
 ﻿/* Space out content a bit */
 body {
-  padding-top: 20px;
+  padding-top: 60px;
   padding-bottom: 20px;
 }
 
@@ -80,5 +80,23 @@ body {
     position: fixed;
     top: 30px;
     right: 5px;
-}
+    }
+  .jumbotron .list-content {
+  padding: 25px 5px 5px 5px; 
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #eeeeee;
+}   
+  .list-group {
+  padding: 25px 5px 5px 5px; 
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #eeeeee;
+ }
 }
