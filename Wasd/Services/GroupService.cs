@@ -95,5 +95,31 @@ namespace Wasd.Services
 
             return theMembers;
         }
+
+        public List<GroupPost> getGroupPosts(int groupId)
+        {
+            var dbGrPost = db.GroupPosts;
+
+            var gPosts = (from gP in dbGrPost
+                          where gP.groupID.Equals(groupId.ToString())
+                          select gP).ToList();
+
+            return gPosts;
+        }
+
+        public Group getGroupById(int groupId)
+        {
+            var group = (from g in db.Groups
+                         where g.Id.Equals(groupId)
+                         select g).SingleOrDefault();
+
+            return group;
+        }
+
+        public void addGroupPost(GroupPost groupPost)
+        {
+            db.GroupPosts.Add(groupPost);
+            db.SaveChanges();
+        }
     }
 }

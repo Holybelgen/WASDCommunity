@@ -5,11 +5,13 @@
     Layout = "~/Views/Shared/_GroupLayout.cshtml";
 }
 
-@foreach (var item in Model)
-{
-    <div>
-        <h4>@item.groupName</h4>
-        <div>@item.aboutGroup</div>
-        <hr />
-    </div>
-}
+<div>
+    @foreach (var item in Model)
+    {
+        <div>
+            <h4>@Html.ActionLink(item.groupName, "ThisGroup", "Groups", new { id = item.Id }, null)</h4>
+            <div>@item.aboutGroup</div>
+            <hr />
+        </div>
+    }
+</div>

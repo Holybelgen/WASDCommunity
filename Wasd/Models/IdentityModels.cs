@@ -15,6 +15,7 @@ namespace Wasd.Models
         public DbSet<UserPost> UserPosts { get; set; }
         public DbSet<FriendOf> FriendOf { get; set; }
         public DbSet<MemberOf> MemberOf { get; set; }
+        public DbSet<GroupPost> GroupPosts { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection")

@@ -20,7 +20,6 @@
             @Html.DisplayNameFor(model => model.userName)
         </th>
     </tr>
-
     @foreach (var item in Model)
     {
         <tr>
@@ -39,6 +38,7 @@
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             </td>
         </tr>
+        
     }
 
 </table>*@
