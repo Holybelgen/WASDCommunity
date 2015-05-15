@@ -332,3 +332,7 @@ C:\Users\Steinar\Dropbox\WASDCommunity\Wasd\bin\PagedList.dll
 C:\Users\Steinar\Dropbox\WASDCommunity\Wasd\bin\PagedList.Mvc.dll
 C:\Users\Steinar\Dropbox\WASDCommunity\Wasd\bin\PagedList.xml
 C:\Users\Steinar\Dropbox\WASDCommunity\Wasd\bin\PagedList.Mvc.xml
+D:\programming\school\wasdcom\WASDCommunity\Wasd\bin\PagedList.dll
+D:\programming\school\wasdcom\WASDCommunity\Wasd\bin\PagedList.Mvc.dll
+D:\programming\school\wasdcom\WASDCommunity\Wasd\bin\PagedList.xml
+D:\programming\school\wasdcom\WASDCommunity\Wasd\bin\PagedList.Mvc.xml

@@ -21,6 +21,7 @@ namespace Wasd.Services
             if (!isFriendOf(currUserId, friendUserId))
             {
                 db.FriendOf.Add(friendship);
+                db.SaveChanges();
                 db.FriendOf.Add(friendshipReturned);
                 db.SaveChanges();
             }
@@ -39,6 +40,24 @@ namespace Wasd.Services
             //}
             //FriendOf fO = new FriendOf() { getUserById(friendUserId), getUserByName(currUserId) };
             //friendOf.Add(new FriendOf () { currUserId, friendUserId });
+        }
+
+        public void friendsNoMore(string userId, string friendId)
+        {
+            var findFriendShip = (from f in db.FriendOf
+                                  where f.userId.Equals(userId)
+                                  && f.friendId.Equals(friendId)
+                                  select f).SingleOrDefault();
+
+            var findFriendShipRet = (from f in db.FriendOf
+                                  where f.userId.Equals(friendId)
+                                  && f.friendId.Equals(userId)
+                                  select f).SingleOrDefault();
+
+            db.FriendOf.Remove(findFriendShip);
+            db.SaveChanges();
+            db.FriendOf.Remove(findFriendShipRet);
+            db.SaveChanges();
         }
 
         public ApplicationUser getUserByName(string name)

@@ -42,6 +42,17 @@ namespace Wasd.Controllers
             return View("Friends");
         }
 
+        public ActionResult removeFriend(string Id)
+        {
+            var friendSer = new FriendService();
+
+            var currUserId = User.Identity.GetUserId();
+
+            friendSer.friendsNoMore(Id, currUserId);
+
+            return View("");
+        }
+
         [ChildActionOnly]
         public ActionResult ListMyFriends()
         {
