@@ -5,11 +5,13 @@
     Layout = "~/Views/Shared/_GroupLayout.cshtml";
 }
 
-@foreach (var item in Model)
-{
-    <div>
-        <h4>@item.groupName</h4>
-        <div>@item.aboutGroup</div>
-        <hr />
-    </div>
-}
+<div>
+    @foreach (var item in Model)
+    {
+        <div class="well col-md-9">
+            <h5>@item.groupName</h5>
+            <p>@item.aboutGroup</p>
+        </div>
+    }
+</div>
+

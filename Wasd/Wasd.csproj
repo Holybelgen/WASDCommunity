@@ -250,7 +250,6 @@
     <Content Include="Views\Home\Edit.cshtml" />
     <Content Include="Views\Friends\ShowResults.cshtml" />
     <Content Include="Views\Friends\ListMyFriends.cshtml" />
-    <Content Include="Views\Groups\ListGroups.cshtml" />
     <Content Include="Views\Home\PostList.cshtml" />
     <Content Include="Views\Groups\ThisGroup.cshtml" />
     <Content Include="Views\Groups\ThisGroupPosts.cshtml" />

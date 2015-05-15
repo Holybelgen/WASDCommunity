@@ -8,10 +8,9 @@
 <div>
     @foreach (var item in Model)
     {
-        <div>
-            <h4>@Html.ActionLink(item.groupName, "ThisGroup", "Groups", new { id = item.Id }, null)</h4>
-            <div>@item.aboutGroup</div>
-            <hr />
+        <div class="well col-md-9">
+            <h5>@Html.ActionLink(item.groupName, "ThisGroup", "Groups", new { id = item.Id }, null)</h5>
+            <p>@item.aboutGroup</p>
         </div>
     }
 </div>
