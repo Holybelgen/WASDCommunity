@@ -21,7 +21,7 @@ namespace Wasd.Controllers
             var ser = new userPostService();
             var posts = ser.getPostsFromFriends(User.Identity.GetUserId());
 
-            return View(posts.OrderByDescending(p => p.date).Take(10).ToList());
+            return View(posts.OrderByDescending(p => p.date).ToList());
         }
 
         // GET: /UserPost/Details/5

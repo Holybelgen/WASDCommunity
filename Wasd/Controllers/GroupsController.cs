@@ -3,8 +3,8 @@ using Wasd.Models;
 using System.Linq;
 using Wasd.Services;
 using Microsoft.AspNet.Identity;
-using Wasd.Models;
 using System.Collections.Generic;
+using System;
 
 namespace Wasd.Controllers
 {
@@ -36,35 +36,21 @@ namespace Wasd.Controllers
         //
         // GET: /Tournaments/
         [Authorize]
-        public ActionResult Tournaments()
+        public ActionResult AllGroups()
         {
-            return View();
+            var groupSer = new GroupService();
+
+            List<Group> allGroups = new List<Group>();
+
+            allGroups = groupSer.listAllGroups();
+
+            return View(allGroups);
         }
-        //
-        // GET: /ScheduledMatches/
-        [Authorize]
-        public ActionResult ScheduledMatches()
-        {
-            return View();
-        }
-        //
-        // GET: /LookingToPlay/
-        [Authorize]
-        public ActionResult LookingToPlay()
-        {
-            return View();
-        }
+
         //
         // GET: /Members/
         [Authorize]
         public ActionResult Members()
-        {
-            return View();
-        }
-        //
-        // GET: /Guides/
-        [Authorize]
-        public ActionResult Guides()
         {
             return View();
         }
@@ -79,6 +65,45 @@ namespace Wasd.Controllers
             allGroups = allGroupsSer.listAllGroups();
 
             return View("ListGroups", allGroups);
+        }
+
+        public ActionResult ThisGroupPosts(GroupPost groupP)
+        {
+            var groupSer = new GroupService();
+
+            List<GroupPost> groupPosts = new List<GroupPost>();
+
+            groupPosts = groupSer.getGroupPosts(groupP.groupID);
+
+            return View(groupPosts.OrderByDescending(p => p.date).ToList());
+        }
+
+        //hópur 8, stofa m116. Hjálp með actionlink
+
+        public ActionResult ThisGroup(int groupId)
+        {
+            var currUserId = User.Identity.GetUserId();
+            var currUserName = User.Identity.GetUserName();
+
+            var groupSer = new GroupService();
+
+            GroupPost groupPost = new GroupPost();
+
+            groupPost.groupID = groupId;
+            groupPost.groupName = groupSer.getGroupById(groupId).groupName;
+            groupPost.userName = currUserName;
+            groupPost.userID = currUserId;
+
+            string format = "ddd MMM d HH:mm yyyy";
+            groupPost.date = DateTime.Now.ToString(format);
+
+            if (ModelState.IsValid)
+            {
+                groupSer.addGroupPost(groupPost);
+                return RedirectToAction("ThisGroup");
+            }
+            
+            return View();
         }
 
         public ActionResult CreateGroup()
@@ -96,7 +121,9 @@ namespace Wasd.Controllers
 
             ser.createGroup(newGroup, userId);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("MyGroups", "Groups");
         }
+
+
     }
 }

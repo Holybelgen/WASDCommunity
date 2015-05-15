@@ -170,6 +170,7 @@
     <Compile Include="Models\FriendOf.cs" />
     <Compile Include="Models\FriendViewModel.cs" />
     <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\GroupPost.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MemberOf.cs" />
     <Compile Include="Models\SearchViewModel.cs" />
@@ -230,11 +231,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Friends\Friends.cshtml" />
     <Content Include="Views\Groups\Groups.cshtml" />
-    <Content Include="Views\Groups\Tournaments.cshtml" />
-    <Content Include="Views\Groups\ScheduledMatches.cshtml" />
-    <Content Include="Views\Groups\LookingToPlay.cshtml" />
+    <Content Include="Views\Groups\AllGroups.cshtml" />
     <Content Include="Views\Groups\Members.cshtml" />
-    <Content Include="Views\Groups\Guides.cshtml" />
     <Content Include="Views\Groups\MyGroups.cshtml" />
     <Content Include="Views\Shared\_GroupLayout.cshtml" />
     <Content Include="Views\Groups\CreateGroup.cshtml" />
@@ -246,6 +244,8 @@
     <Content Include="Views\Friends\ListMyFriends.cshtml" />
     <Content Include="Views\Groups\ListGroups.cshtml" />
     <Content Include="Views\Home\PostList.cshtml" />
+    <Content Include="Views\Groups\ThisGroup.cshtml" />
+    <Content Include="Views\Groups\ThisGroupPosts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
