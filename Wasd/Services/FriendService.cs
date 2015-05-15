@@ -25,21 +25,6 @@ namespace Wasd.Services
                 db.FriendOf.Add(friendshipReturned);
                 db.SaveChanges();
             }
-
-
-            //try
-            //{
-            
-            //}
-            //catch
-            //{
-            //    var ifExists = from f in db.FriendOf
-            //                   where f.Equals(friendship)
-            //                   select f;
-                
-            //}
-            //FriendOf fO = new FriendOf() { getUserById(friendUserId), getUserByName(currUserId) };
-            //friendOf.Add(new FriendOf () { currUserId, friendUserId });
         }
 
         public void friendsNoMore(string userId, string friendId)

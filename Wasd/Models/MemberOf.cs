@@ -11,12 +11,10 @@ namespace Wasd.Models
     {
         [Key]
         [Column(Order = 1)]
-        //[ForeignKey("ApplicationUser")]
         public String userId { get; set; }
 
         [Key]
         [Column(Order = 2)]
-        //[ForeignKey("ApplicationUser")]
         public String groupId { get; set; }
 
         public MemberOf()
@@ -25,7 +23,6 @@ namespace Wasd.Models
 
         public MemberOf(String userId, String groupId)
         {
-            // TODO: Complete member initialization
             this.userId = userId;
             this.groupId = groupId;
         }

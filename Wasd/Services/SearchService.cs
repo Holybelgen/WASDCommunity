@@ -16,7 +16,6 @@ namespace Wasd.Services
             string searchString = searchstring.Query;
 
             var users = from u in db.Users
-                        //where u.UserName.Contains(searchString)
                         select u;
 
             users = users.Where(s => s.UserName.Contains(searchString));
