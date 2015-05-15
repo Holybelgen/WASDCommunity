@@ -26,29 +26,6 @@ namespace Wasd.Services
             return posts;
         }
 
-        //public List<UserPost> getPostsFromGroup(int groupId)
-        //{
-        //    var groupSer = new GroupService();
-        //    var dbPost = db.UserPosts;
-
-        //    List<ApplicationUser> members = new List<ApplicationUser>();
-        //    List<UserPost> posts = new List<UserPost>();
-
-        //    members = groupSer.getMembersOfGroup(groupId);
-
-        //    foreach(ApplicationUser u in members)
-        //    {
-        //        foreach(UserPost p in dbPost)
-        //        {
-        //            if(u.Id.Equals(p.userID))
-        //            {
-        //                posts.Add(p);
-        //            }
-        //        }
-        //    }
-        //    return posts;
-        //}
-
         public List<UserPost> getPostsFromFriends(string userId)
         {
             var friendSer = new FriendService();

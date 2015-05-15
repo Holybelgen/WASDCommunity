@@ -9,10 +9,10 @@
 
 @using (Html.BeginForm("Friends", "Friends"))
 {
-    @Html.LabelFor(x => x.Query)
+    @*@Html.LabelFor(x => x.Query)*@
     @Html.EditorFor(x => x.Query)
     @Html.ValidationMessageFor(x => x.Query)
-    <input type="submit" value="search" />
+    <input type="submit" value="Search Users" />
 }
 
 

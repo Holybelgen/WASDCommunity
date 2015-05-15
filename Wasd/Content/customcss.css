@@ -103,9 +103,9 @@ body {
 }*/
 .margin-top
 {
-    margin-top: 30px;
-    float: right;
-    width: 250px;
-    margin-left: auto;
-    margin-right: 50px;
+    position: fixed;
+    right: 0px;
+    margin-top: 50px;
+    margin-right: 5%;
+    width: 20%;
 }

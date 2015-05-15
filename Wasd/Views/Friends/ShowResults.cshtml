@@ -5,9 +5,9 @@
 }
 
 <h2>ShowResults</h2>
-<ul>
+<ul class="list-group">
     @foreach (var user in Model)
     {
-        <li>@user.UserName @Html.ActionLink("Add", "AddFriend", new { id = user.Id })</li>
+        <li class="list-group-item col-lg-4">@user.UserName @Html.ActionLink("Follow", "AddFriend", new { id = user.Id })</li>
     }
 </ul>
