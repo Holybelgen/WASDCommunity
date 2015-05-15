@@ -35,11 +35,12 @@
             @Html.Action("ListMyFriends", "Friends")
         }
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - WASD Gaming Community</p>
-        </footer>
     </div>
+
+    <hr />
+    <footer class="footer-margin">
+        @*&copy;*@ @DateTime.Now.Year - WASD Gaming Community
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

@@ -24,7 +24,7 @@ namespace Wasd
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/paperbootstrap.css",
                       "~/Content/site.css"));
         }
     }

@@ -328,3 +328,7 @@ C:\Users\Steinar\Dropbox\WASDCommunity\Wasd\bin\Microsoft.Owin.Security.Microsof
 C:\Users\Steinar\Dropbox\WASDCommunity\Wasd\obj\Debug\Wasd.csprojResolveAssemblyReference.cache
 C:\Users\Steinar\Dropbox\WASDCommunity\Wasd\obj\Debug\Wasd.dll
 C:\Users\Steinar\Dropbox\WASDCommunity\Wasd\obj\Debug\Wasd.pdb
+C:\Users\Steinar\Dropbox\WASDCommunity\Wasd\bin\PagedList.dll
+C:\Users\Steinar\Dropbox\WASDCommunity\Wasd\bin\PagedList.Mvc.dll
+C:\Users\Steinar\Dropbox\WASDCommunity\Wasd\bin\PagedList.xml
+C:\Users\Steinar\Dropbox\WASDCommunity\Wasd\bin\PagedList.Mvc.xml
