@@ -14,7 +14,7 @@
         @foreach (var item in Model)
         {
             <li class="list-group-item">
-                @item.UserName &nbsp; @Html.ActionLink("Unfollow", "Delete", new { id = item.Id })
+                @item.UserName &nbsp; @Html.ActionLink("Unfollow", "removeFriend", new { id = item.Id })
             </li>
         }
     </ul>
